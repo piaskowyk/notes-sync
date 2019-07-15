@@ -1,4 +1,11 @@
 {
+  "description": "<description>",
+  "author": "<author>",
+  "build": {
+  "appId": "<com.app>"
+  },
+  "main": "public/electron.js",
+  "homepage": "./",
   "name": "notes-sync",
   "version": "0.1.0",
   "private": true,
