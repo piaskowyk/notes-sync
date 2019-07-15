@@ -2,7 +2,7 @@
   "description": "<description>",
   "author": "<author>",
   "build": {
-  "appId": "<com.app>"
+    "appId": "<com.app>"
   },
   "main": "public/electron.js",
   "homepage": "./",
@@ -19,8 +19,10 @@
     "electron": "^5.0.6",
     "electron-builder": "^21.0.15",
     "electron-is-dev": "^1.1.0",
+    "quill": "^1.3.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-quill": "^1.3.3",
     "react-scripts": "3.0.1",
     "typescript": "3.5.3",
     "wait-on": "^3.3.0"

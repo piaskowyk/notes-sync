@@ -1,26 +1,69 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import ListItem from './ListItem';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends React.Component<any, any> {
+
+  constructor(props:any) {
+    super(props);
+    this.state = { 
+      text: '' 
+    };
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  modules = {
+    toolbar: [
+      [{ 'header': [1, 2, false] }],
+      ['bold', 'italic', 'underline','strike', 'blockquote'],
+      [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+      ['link', 'image'],
+      ['clean']
+    ],
+  };
+
+  formats = [
+    'header',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'link', 'image'
+  ];
+
+  handleChange(value:string) {
+    this.setState({ text: value })
+  }
+
+  makeList() {
+    let items = [];
+    for(var i = 0; i < 5; i++) {
+      items.push(<ListItem key={i}></ListItem>);
+    }
+
+    return(items);
+  }
+
+  render() {
+    return (
+      <div className="MainContainer">
+        <div className="LeftBar">
+          { this.makeList() }
+        </div>
+        <div className="RightBar">
+        <ReactQuill 
+          className="Editor"
+          theme="snow" 
+          value={this.state.text} 
+          onChange={this.handleChange} 
+          modules={this.modules}
+          formats={this.formats}
+        />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
