@@ -1,0 +1,52 @@
+.ListItem {
+	padding: 5px 10px;
+	border-bottom: 1px solid #ffffff;
+}
+
+.ListItem:hover {
+	cursor: pointer;
+	background: #707070;
+}
+
+.ActionBar {
+	display: none;
+}
+
+.ListItem:hover .ActionBar {
+	display: block;
+}
+
+.ActionBar #Remove {
+	float: right;
+	background: #464646;
+	border-radius: 100%;
+	width: 20px;
+	height: 20px;
+	line-height: 15px;
+	text-align: center;
+}
+
+.ActionBar #Remove:hover {
+	background: #9b1717;
+}
+
+.NotesName {
+
+}
+
+.Bottombar {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 5px;
+	font-size: 12px;
+}
+
+.NotesStart {
+	white-space: nowrap; 
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.NotesDate {
+	margin-left: 20px;
+}

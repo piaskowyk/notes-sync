@@ -10,7 +10,8 @@ export class App extends React.Component<any, any> {
   constructor(props:any) {
     super(props);
     this.state = { 
-      text: '' 
+      text: '',
+      counter: 1,
     };
     this.handleChange = this.handleChange.bind(this)
   }
@@ -20,7 +21,7 @@ export class App extends React.Component<any, any> {
       [{ 'header': [1, 2, false] }],
       ['bold', 'italic', 'underline','strike', 'blockquote'],
       [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-      ['link', 'image'],
+      ['link', 'image', 'code-block'],
       ['clean']
     ],
   };
@@ -29,7 +30,7 @@ export class App extends React.Component<any, any> {
     'header',
     'bold', 'italic', 'underline', 'strike', 'blockquote',
     'list', 'bullet', 'indent',
-    'link', 'image'
+    'link', 'image',
   ];
 
   handleChange(value:string) {
@@ -39,7 +40,10 @@ export class App extends React.Component<any, any> {
   makeList() {
     let items = [];
     for(var i = 0; i < 5; i++) {
-      items.push(<ListItem key={i}></ListItem>);
+      items.push(<ListItem 
+        key={i} 
+        onClick={() => this.setState({ text: 'mleko' + this.state.counter, counter: this.state.counter + 1 })}>
+        </ListItem>);
     }
 
     return(items);
