@@ -14,6 +14,15 @@ function createWindow() {
         : `file://${path.join(__dirname, "../build/index.html")}`
     );
     mainWindow.on("closed", () => (mainWindow = null));
+
+    const fs = require("fs");
+
+fs.readFile('input.txt', function (err, data) {
+    if (err) {
+      return console.error(err);
+    }
+    console.log("Asynchronous read: " + data.toString());
+});
 }
 
 app.on("ready", createWindow);

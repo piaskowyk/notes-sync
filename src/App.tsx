@@ -12,8 +12,11 @@ export class App extends React.Component<any, any> {
     this.state = { 
       text: '',
       counter: 1,
+      showLeftBar: true,
     };
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+
+    
   }
 
   modules = {
@@ -51,7 +54,7 @@ export class App extends React.Component<any, any> {
 
   render() {
     return (
-      <div className="MainContainer">
+      <div className="MainContainer" onClick={() => {}}>
         <div className="LeftBar">
           { this.makeList() }
         </div>
