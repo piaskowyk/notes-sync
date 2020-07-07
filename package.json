@@ -16,7 +16,7 @@
     "@types/react-dom": "16.8.4",
     "concurrently": "^4.1.1",
     "cross-env": "^5.2.0",
-    "electron": "^5.0.6",
+    "electron": "^7.2.4",
     "electron-builder": "^21.0.15",
     "electron-is-dev": "^1.1.0",
     "firebase": "^6.3.0",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.1",
-    "electron": "^5.0.6",
+    "electron": "^7.2.4",
     "electron-builder": "^21.0.15",
     "wait-on": "^3.3.0"
   },
